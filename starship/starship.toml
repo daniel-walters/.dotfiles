@@ -1,0 +1,10 @@
+format = "$directory$git_branch$git_metrics$git_status$time$line_break$character"
+
+[time]
+disabled = false
+format = 'at [$time]($style) '
+use_12hr = true
+time_format = "%H:%M %p"
+
+[git_metrics]
+disabled = false
