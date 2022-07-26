@@ -9,4 +9,5 @@ require("toggleterm").setup({
 	persist_size = false,
 	direction = "vertical",
 	open_mapping = [[<C-\>]],
+	shell = vim.o.shell,
 })

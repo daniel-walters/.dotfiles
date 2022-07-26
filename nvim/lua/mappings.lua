@@ -90,3 +90,6 @@ map("n", "<Leader>ghr", ":Octo search review-requested:@me is:open<CR>", options
 
 -- Utils
 map("n", "<Leader>lg", ":lua require('utils.lazygit').LazyGit()<CR>", options)
+map("n", "<Leader>noe", ":lua require('utils.notes').open_notes()<CR>", options)
+map("n", "<Leader>now", ":lua require('utils.notes_watch').Notes()<CR>", options)
+map("n", "<Leader>ch", ":lua require('utils.chsh').ch()<CR>", options)
