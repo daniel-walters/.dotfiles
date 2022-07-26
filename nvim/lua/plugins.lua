@@ -86,7 +86,7 @@ return require("packer").startup(function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 		config = get_config("treesitter"),
-		event = "BufReadPre",
+		after = "packer.nvim",
 	})
 
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" })
