@@ -1,5 +1,5 @@
-ln -sfn ~/.dotfiles/nvim ~/.config/
-ln -sfn ~/.dotfiles/alacritty ~/.config/
-ln -sfn ~/.dotfiles/starship/starship.toml ~/.config/
-ln -sfn ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -sfn ~/.dotfiles/zsh/.zsh_functions ~/
+sudo ln -sfn ~/.dotfiles/nvim ~/.config/
+sudo ln -sfn ~/.dotfiles/alacritty ~/.config/
+sudo ln -sfn ~/.dotfiles/starship/starship.toml ~/.config/
+sudo ln -sfn ~/.dotfiles/zsh/zshrc ~/.zshrc
+sudo ln -sfn ~/.dotfiles/zsh/.zsh_functions ~/
