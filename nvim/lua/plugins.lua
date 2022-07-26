@@ -91,7 +91,6 @@ return require("packer").startup(function()
 
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" })
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
-	use({ "lewis6991/spellsitter.nvim", after = "nvim-treesitter", config = get_config("spellsitter") })
 
 	------------------------
 	--------- FZF ----------
