@@ -104,7 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(rbenv init -)"
 
 mkcd() {
 	mkdir $1 && cd $1
