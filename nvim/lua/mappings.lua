@@ -81,6 +81,7 @@ map("n", "gd", ":Telescope lsp_definitions<CR>", options)
 map("n", "gr", ":Telescope lsp_references<CR>", options)
 map("n", "gt", ":Telescope lsp_type_definitions<CR>", options)
 map("n", "<Leader>ff", ":Telescope find_files<CR>", options)
+map("n", "<Leader>fg", ":Telescope live_grep<CR>", options)
 
 -- Octo
 map("n", "<Leader>ghp", ":Octo pr list<CR>", options)
