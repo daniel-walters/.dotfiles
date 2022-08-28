@@ -75,6 +75,7 @@ map("n", "<Leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", options)
 -- LSP
 map("n", "gh", ":lua vim.lsp.buf.hover()<CR>", options)
 map("n", "ga", ":CodeActionMenu<CR>", options)
+map("n", "ge", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", options)
 
 -- Telescope
 map("n", "gd", ":Telescope lsp_definitions<CR>", options)

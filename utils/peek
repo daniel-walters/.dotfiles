@@ -1,0 +1,20 @@
+#!/bin/bash
+
+NUMLINES="0"
+TARGET=""
+
+while getopts 't:n:' OPTION; do
+  case "$OPTION" in
+    t) TARGET="$OPTARG"
+      ;;
+    n)
+      NUMLINES="$OPTARG"
+      ;;
+  esac
+done
+
+if [ "$TARGET" = "" ]; then echo "ERROR: target pane (-t) must be supplied";exit; fi
+if [ "$NUMLINES" = 0 ]; then 
+  tmux capture-pane -pet "$TARGET"; else
+  tmux capture-pane -pet "$TARGET" | sed '/^$/d' | tail -n "$NUMLINES" 
+fi
