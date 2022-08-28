@@ -115,6 +115,7 @@ watch-md() {
 
 alias lg="lazygit"
 alias mux="tmuxinator"
+alias ls="exa --icons"
 
 path+=('/Users/daniel/.gem/ruby/3.0.0/bin')
 export PATH
