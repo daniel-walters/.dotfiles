@@ -43,6 +43,7 @@ local servers = {
 	"html", -- HTML
 	"jsonls", -- JSON
 	"tsserver", -- JS/TS
+	"rust_analyzer", -- Rust
 	"sumneko_lua", -- LUA
 	"pyright", -- Python
 	"sqlls", -- SQL

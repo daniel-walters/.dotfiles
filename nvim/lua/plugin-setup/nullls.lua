@@ -6,6 +6,7 @@ null.setup({
 		null.builtins.code_actions.eslint,
 		null.builtins.diagnostics.eslint,
 		null.builtins.formatting.prettier,
+		null.builtins.formatting.rustfmt.with({ extra_args = { "--edition=2021" } }),
 		null.builtins.formatting.stylua,
 	},
 	on_attach = function(client, bufnr)
