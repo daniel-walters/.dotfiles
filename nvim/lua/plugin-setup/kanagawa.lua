@@ -1,4 +1,4 @@
 require("kanagawa").setup({
 	globalStatus = true,
 })
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")

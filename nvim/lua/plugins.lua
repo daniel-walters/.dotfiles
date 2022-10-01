@@ -47,6 +47,19 @@ return require("packer").startup(function()
 		after = "packer.nvim",
 		config = get_config("kanagawa"),
 	})
+
+	use({
+		"folke/tokyonight.nvim",
+		after = "packer.nvim",
+		config = get_config("tokyonight"),
+	})
+
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		after = "packer.nvim",
+		config = get_config("catppuccin"),
+	})
 	------------------------
 	--------- LSP ----------
 	------------------------
@@ -80,7 +93,7 @@ return require("packer").startup(function()
 	------------------------
 	------ Treesitter ------
 	------------------------
-	 use({
+	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
@@ -154,7 +167,7 @@ return require("packer").startup(function()
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		after = "kanagawa.nvim",
+		after = "tokyonight.nvim",
 		config = get_config("lualine"),
 	})
 	use({
