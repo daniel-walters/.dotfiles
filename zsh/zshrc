@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export GCS_SERVICE_ACCOUNT_FILE="/Users/daniel/.config/gcloud/legacy_credentials/daniel.walters@genero.com/adc.json"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 mkcd() {
@@ -116,6 +118,8 @@ watch-md() {
 alias lg="lazygit"
 alias mux="tmuxinator"
 alias ls="exa --icons"
+alias detach="tmux detach"
+alias attach="tmux attach"
 
 path+=('/Users/daniel/.gem/ruby/3.0.0/bin')
 export PATH
