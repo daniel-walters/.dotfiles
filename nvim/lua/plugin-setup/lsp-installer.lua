@@ -24,8 +24,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
-require("nvim-lsp-installer").setup({
-	automatic_installation = true,
+require("mason").setup({
 	ui = {
 		icons = {
 			server_installed = "✓",
@@ -33,6 +32,10 @@ require("nvim-lsp-installer").setup({
 			server_uninstalled = "✗",
 		},
 	},
+})
+
+require("mason-lspconfig").setup({
+	automatic_installation = true,
 })
 
 local servers = {
@@ -60,10 +63,9 @@ local function on_attach(client, bufnr)
 		toggle_key = "<C-`>",
 		zindex = 50,
 	}, bufnr)
-	client.resolved_capabilities.document_formatting = false
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, server in ipairs(servers) do
 	local opts = {

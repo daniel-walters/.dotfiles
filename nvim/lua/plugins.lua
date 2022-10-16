@@ -42,11 +42,6 @@ return require("packer").startup(function()
 	------------------------
 	-------- Colour --------
 	------------------------
-	use({
-		"rebelot/kanagawa.nvim",
-		after = "packer.nvim",
-		config = get_config("kanagawa"),
-	})
 
 	use({
 		"folke/tokyonight.nvim",
@@ -54,19 +49,13 @@ return require("packer").startup(function()
 		config = get_config("tokyonight"),
 	})
 
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-		after = "packer.nvim",
-		config = get_config("catppuccin"),
-	})
 	------------------------
 	--------- LSP ----------
 	------------------------
 	use({
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
-		requires = "williamboman/nvim-lsp-installer",
+		requires = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 		config = get_config("lsp-installer"),
 	})
 
