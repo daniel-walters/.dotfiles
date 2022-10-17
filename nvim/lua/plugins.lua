@@ -175,6 +175,11 @@ return require("packer").startup(function()
 		config = get_config("tree"),
 		cmd = "NvimTreeFocus",
 	})
+	use({
+		"nvim-treesitter/nvim-treesitter-context",
+		after = "nvim-treesitter",
+		config = get_config("treesitter-context"),
+	})
 
 	------------------------
 	--------- GIT ----------

@@ -1,5 +1,5 @@
 require("tokyonight").setup({
-	style = "night",
+	style = "storm",
 })
 
 vim.cmd("colorscheme tokyonight")
