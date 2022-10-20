@@ -10,4 +10,8 @@ require("toggleterm").setup({
 	direction = "vertical",
 	open_mapping = [[<C-\>]],
 	shell = vim.o.shell,
+	float_opts = {
+		height = math.floor(vim.o.lines * 0.9),
+		width = math.floor(vim.o.columns * 0.95),
+	},
 })

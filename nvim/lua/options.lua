@@ -19,7 +19,7 @@ opt.termguicolors = true
 opt.timeoutlen = 500
 opt.numberwidth = 8
 opt.wrap = false
+opt.splitright = true
+opt.splitbelow = true
 
 g.completeopt = "menu, menuone, noselect"
-g.splitbelow = true
-g.splitright = true

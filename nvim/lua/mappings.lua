@@ -11,8 +11,8 @@ map("n", ":", ";", options)
 map("n", ";", ":", options)
 
 -- Movement
-map("n", "<S-k>", "10k", options)
-map("n", "<S-j>", "10j", options)
+map({ "n", "v" }, "<S-k>", "10k", options)
+map({ "n", "v" }, "<S-j>", "10j", options)
 map({ "n", "v" }, "<S-h>", "0", options)
 map({ "n", "v" }, "<S-l>", "$", options)
 
@@ -29,8 +29,8 @@ map("n", "<Leader>wJ", "<C-W>J", options)
 map("n", "<Leader>wH", "<C-W>H", options)
 
 -- Splits
-map("n", "<C-v>", ":vs<CR>", options)
-map("n", "<C-x>", ":sp<CR>", options)
+map("n", "<C-v>", ":vs<CR><C-W>L", options)
+map("n", "<C-x>", ":sp<CR><C-W>J", options)
 
 -- Alternate file
 map("n", "<Leader>0", "<C-^>", options)
