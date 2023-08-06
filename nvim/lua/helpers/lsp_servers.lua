@@ -31,7 +31,7 @@ return {
 	omnisharp = {},
 	pyright = {},
 	solargraph = {},
-	remark_ls = {},
+	marksman = {},
 	rust_analyzer = {},
 	sqlls = {},
 	tsserver = {},
