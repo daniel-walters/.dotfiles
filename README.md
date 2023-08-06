@@ -1,4 +1,4 @@
 # My dotfiles
 
 ## Usage
-Clone into `~/.dotfiles` and run `~./dotfiles/install.sh`
+Clone into your root directory and run `~./dotfiles/install.sh`
