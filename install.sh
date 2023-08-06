@@ -1,6 +1,12 @@
-ln -s nvim ~/.config/nvim
-ln -s alacritty ~/.config/alacritty
-ln -s tmux ~/.config/tmux
-ln -s zshrc ~/.zshrc
+#!/bin/bash
 
-brew bundle install
+sudo ln -si nvim ~/.config/nvim
+sudo ln -si alacritty ~/.config/alacritty
+sudo ln -si tmux ~/.config/tmux
+sudo ln -si zshrc ~/.zshrc
+
+if [ ! -e "~/.hushlogin" ]; then
+    sudo touch ~/.hushlogin
+fi
+
+sudo brew bundle install
