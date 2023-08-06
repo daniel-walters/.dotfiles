@@ -1,12 +1,12 @@
 #!/bin/bash
 
-sudo ln -si nvim ~/.config/nvim
-sudo ln -si alacritty ~/.config/alacritty
-sudo ln -si tmux ~/.config/tmux
-sudo ln -si zshrc ~/.zshrc
+sudo ln -si ~/.dotfiles/nvim ~/.config/nvim
+sudo ln -si ~/.dotfiles/alacritty ~/.config/alacritty
+sudo ln -si ~/.dotfiles/tmux ~/.config/tmux
+sudo ln -si ~/.dotfiles/zshrc ~/.zshrc
 
 if [ ! -e "~/.hushlogin" ]; then
     sudo touch ~/.hushlogin
 fi
 
-sudo brew bundle install
+brew bundle install
