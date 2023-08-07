@@ -198,12 +198,27 @@ return {
 				filetype = filetype,
 			})
 
-			vim.cmd([[
-                augroup FormatAutogroup
-                    autocmd!
-                    autocmd BufWritePost * FormatWriteLock
-                augroup END
-            ]])
+			vim.api.nvim_create_autocmd("BufWritePost", {
+				callback = function()
+					if filetype[vim.bo.filetype] ~= nil then
+						vim.cmd("FormatWriteLock")
+					elseif #vim.lsp.get_active_clients() > 0 then
+						local cli = vim.lsp.get_active_clients()[1]
+						if
+							cli
+							and require("helpers.lsp_utils").client_supports_formatting(
+								cli.id
+							)
+						then
+							vim.lsp.buf.format()
+						end
+					else
+						print(
+							"Formatter not set for this ft and LSP cannot format"
+						)
+					end
+				end,
+			})
 		end,
 	},
 }
