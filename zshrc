@@ -108,6 +108,7 @@ function mkcd () {
 }
 
 alias lg="lazygit"
+alias brewgen="brew bundle dump --force"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
