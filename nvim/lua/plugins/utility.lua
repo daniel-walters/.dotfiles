@@ -183,6 +183,7 @@ return {
 
 			local filetype = {
 				lua = { require("formatter.filetypes.lua").stylua },
+				python = { require("formatter.filetypes.python").black },
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
 				},
@@ -201,7 +202,7 @@ return {
 			vim.api.nvim_create_autocmd("BufWritePost", {
 				callback = function()
 					if filetype[vim.bo.filetype] ~= nil then
-						vim.cmd("FormatWriteLock")
+						vim.cmd("FormatWrite")
 					elseif #vim.lsp.get_active_clients() > 0 then
 						local cli = vim.lsp.get_active_clients()[1]
 						if
