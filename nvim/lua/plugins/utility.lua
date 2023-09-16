@@ -172,6 +172,7 @@ return {
 		"mhartington/formatter.nvim",
 		config = function()
 			local prettier_ft = {
+				"astro",
 				"html",
 				"css",
 				"scss",

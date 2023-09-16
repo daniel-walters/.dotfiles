@@ -1,4 +1,5 @@
 return {
+	astro = {},
 	bashls = {},
 	cssls = {},
 	dockerls = {},
