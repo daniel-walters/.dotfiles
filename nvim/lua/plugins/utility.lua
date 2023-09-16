@@ -182,9 +182,21 @@ return {
 				"typescriptreact",
 			}
 
+			local function clang()
+				local clang_config =
+					require("formatter.filetypes.java").clangformat()
+				clang_config.args = {
+					'-style="{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80}"',
+					"-assume-filename=.java",
+				}
+
+				return clang_config
+			end
+
 			local filetype = {
 				lua = { require("formatter.filetypes.lua").stylua },
 				python = { require("formatter.filetypes.python").black },
+				java = { clang },
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
 				},

@@ -21,6 +21,7 @@ return {
 					"go",
 					"graphql",
 					"html",
+					"java",
 					"javascript",
 					"jsdoc",
 					"json",

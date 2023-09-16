@@ -7,6 +7,7 @@ return {
 	gopls = {},
 	graphql = {},
 	html = {},
+	jdtls = {},
 	jsonls = {},
 	lua_ls = {
 		on_init = function(client)
