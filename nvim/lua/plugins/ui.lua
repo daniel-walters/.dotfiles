@@ -160,14 +160,4 @@ return {
 			require("alpha").setup(require("alpha.themes.dashboard").config)
 		end,
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("indent_blankline").setup({
-				use_treesitter = true,
-				filetype = { "python" },
-			})
-		end,
-	},
 }
