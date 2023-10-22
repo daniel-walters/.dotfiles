@@ -38,6 +38,7 @@ return {
 			return true
 		end,
 	},
+	tailwindcss = {},
 	omnisharp = {},
 	pyright = {},
 	solargraph = {},
