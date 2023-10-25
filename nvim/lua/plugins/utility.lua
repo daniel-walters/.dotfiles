@@ -168,73 +168,73 @@ return {
 		"andymass/vim-matchup",
 		event = "VeryLazy",
 	},
-	{
-		"mhartington/formatter.nvim",
-		config = function()
-			local prettier_ft = {
-				"astro",
-				"html",
-				"css",
-				"scss",
-				"javascript",
-				"typescript",
-				"javacsriptreact",
-				"typescriptreact",
-			}
-
-			local function clang()
-				local clang_config =
-					require("formatter.filetypes.java").clangformat()
-				clang_config.args = {
-					'-style="{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80}"',
-					"-assume-filename=.java",
-				}
-
-				return clang_config
-			end
-
-			local filetype = {
-				lua = { require("formatter.filetypes.lua").stylua },
-				python = { require("formatter.filetypes.python").black },
-				java = { clang },
-				["*"] = {
-					require("formatter.filetypes.any").remove_trailing_whitespace,
-				},
-			}
-
-			for _, value in pairs(prettier_ft) do
-				filetype[value] = { require("formatter.defaults").prettierd }
-			end
-
-			require("formatter").setup({
-				logging = true,
-				log_level = vim.log.levels.WARN,
-				filetype = filetype,
-			})
-
-			vim.api.nvim_create_autocmd("BufWritePost", {
-				callback = function()
-					if filetype[vim.bo.filetype] ~= nil then
-						vim.cmd("FormatWrite")
-					elseif #vim.lsp.get_active_clients() > 0 then
-						local cli = vim.lsp.get_active_clients()[1]
-						if
-							cli
-							and require("helpers.lsp_utils").client_supports_formatting(
-								cli.id
-							)
-						then
-							vim.lsp.buf.format()
-						end
-					else
-						print(
-							"Formatter not set for this ft and LSP cannot format"
-						)
-					end
-				end,
-			})
-		end,
-	},
+	-- {
+	-- 	"mhartington/formatter.nvim",
+	-- 	config = function()
+	-- 		local prettier_ft = {
+	-- 			"astro",
+	-- 			"html",
+	-- 			"css",
+	-- 			"scss",
+	-- 			"javascript",
+	-- 			"typescript",
+	-- 			"javacsriptreact",
+	-- 			"typescriptreact",
+	-- 		}
+	--
+	-- 		local function clang()
+	-- 			local clang_config =
+	-- 				require("formatter.filetypes.java").clangformat()
+	-- 			clang_config.args = {
+	-- 				'-style="{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80}"',
+	-- 				"-assume-filename=.java",
+	-- 			}
+	--
+	-- 			return clang_config
+	-- 		end
+	--
+	-- 		local filetype = {
+	-- 			lua = { require("formatter.filetypes.lua").stylua },
+	-- 			python = { require("formatter.filetypes.python").black },
+	-- 			java = { clang },
+	-- 			["*"] = {
+	-- 				require("formatter.filetypes.any").remove_trailing_whitespace,
+	-- 			},
+	-- 		}
+	--
+	-- 		for _, value in pairs(prettier_ft) do
+	-- 			filetype[value] = { require("formatter.defaults").prettierd }
+	-- 		end
+	--
+	-- 		require("formatter").setup({
+	-- 			logging = true,
+	-- 			log_level = vim.log.levels.WARN,
+	-- 			filetype = filetype,
+	-- 		})
+	--
+	-- 		vim.api.nvim_create_autocmd("BufWritePost", {
+	-- 			callback = function()
+	-- 				if filetype[vim.bo.filetype] ~= nil then
+	-- 					vim.cmd("FormatWrite")
+	-- 				elseif #vim.lsp.get_active_clients() > 0 then
+	-- 					local cli = vim.lsp.get_active_clients()[1]
+	-- 					if
+	-- 						cli
+	-- 						and require("helpers.lsp_utils").client_supports_formatting(
+	-- 							cli.id
+	-- 						)
+	-- 					then
+	-- 						vim.lsp.buf.format()
+	-- 					end
+	-- 				else
+	-- 					print(
+	-- 						"Formatter not set for this ft and LSP cannot format"
+	-- 					)
+	-- 				end
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"luckasRanarison/nvim-devdocs",
 		dependencies = {
