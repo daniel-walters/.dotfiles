@@ -129,12 +129,11 @@ return {
 				end
 			end
 
-			local prettier = null_ls.builtins.formatting.prettierd
-			table.insert(prettier.filetypes, "atsro")
-
 			null_ls.setup({
 				sources = {
-					prettier,
+					null_ls.builtins.formatting.prettier.with({
+						extra_filetypes = { "astro " },
+					}),
 					null_ls.builtins.formatting.stylua,
 				},
 				on_attach = on_attach,
