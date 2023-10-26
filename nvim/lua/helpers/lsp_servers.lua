@@ -7,6 +7,7 @@ return {
 	gopls = {},
 	graphql = {},
 	html = {},
+	intelephense = {},
 	jdtls = {},
 	jsonls = {},
 	lua_ls = {
