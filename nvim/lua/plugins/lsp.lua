@@ -135,6 +135,7 @@ return {
 						extra_filetypes = { "astro " },
 					}),
 					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.gofmt,
 				},
 				on_attach = on_attach,
 			})
