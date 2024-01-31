@@ -11,6 +11,12 @@ return {
 			"folke/neodev.nvim",
 		},
 		config = function()
+			vim.filetype.add({
+				extension = {
+					templ = "templ",
+				},
+			})
+
 			vim.diagnostic.config({
 				signs = false,
 				virtual_text = {
@@ -132,7 +138,7 @@ return {
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.prettier.with({
-						extra_filetypes = { "astro " },
+						extra_filetypes = { "astro", "html" },
 					}),
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.gofmt,

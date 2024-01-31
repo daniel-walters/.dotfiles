@@ -35,6 +35,7 @@ return {
 					"rust",
 					"scss",
 					"sql",
+					"templ",
 					"toml",
 					"tsx",
 					"typescript",
@@ -51,10 +52,11 @@ return {
 					enable = true,
 					disable_virtual_text = true,
 				},
-				context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
-				},
+			})
+
+			---@diagnostic disable-next-line: missing-fields
+			require("ts_context_commentstring").setup({
+				enable_autocmd = false,
 			})
 		end,
 	},
